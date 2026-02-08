@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>ganu art</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Nordic font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background: #f4f4f4;
+    }
+    img {
+      filter: contrast(0.98) saturate(0.95);
+    }
+  </style>
+</head>
+
+<body class="text-gray-900">
+
+<!-- Header -->
+<header class="max-w-7xl mx-auto px-10 py-12 flex justify-between items-center">
+  <h1 class="text-lg font-medium tracking-wide">Cauliflowers</h1>
+  <span class="text-xs text-gray-400">Digital illustrations</span>
+</header>
+
+<!-- Gallery -->
+<main class="max-w-7xl mx-auto px-10 pb-24">
+  <div id="gallery"
+       class="columns-2 md:columns-3 lg:columns-4 xl:columns-5 2xl:columns-6 gap-8 space-y-8">
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="text-center text-xs text-gray-400 pb-10">
+  © 2026 ganu art
+</footer>
+
+<script>
+
+const images = [
+  "./images/S__57270309.jpg",
+  "./images/S__57270315_0.jpg",
+  "./images/S__57270325_0.jpg",
+  "./images/S__57270316_0.jpg",    
+  "./images/S__57270326_0.jpg",
+  "./images/S__57270327_0.jpg",
+  "https://placehold.jp/870x1882.png",
+  "./images/S__57270329_0.jpg",
+  "https://placehold.jp/870x1882.png",
+  "./images/S__57270328_0.jpg",
+];
+
+const gallery = document.getElementById("gallery");
+
+images.forEach((src, i) => {
+  const div = document.createElement("div");
+  div.className = "break-inside-avoid group";
+
+  div.innerHTML = `
+    <img src="${src}" class="w-full rounded-lg transition group-hover:opacity-90 cursor-zoom-in">
+    <div class="mt-2">
+      <p class="text-sm font-light">Artwork ${i+1}</p>
+      <p class="text-xs text-gray-400">digital sketch</p>
+    </div>
+  `;
+
+  gallery.appendChild(div);
+});
+</script>
+
+</body>
+</html>
