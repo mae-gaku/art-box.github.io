@@ -45,31 +45,42 @@
 <script>
 
   
-const images = [
-  "./image/S__57270309.jpg",
-  "./image/S__57270315_0.jpg",
-  "./image/S__57270325_0.jpg",
-  "./image/S__57270316_0.jpg",    
-  "./image/S__57270326_0.jpg",
-  "./image//S__57270327_0.jpg",
-  "./image/S__57270309.jpg",
-  "./image//S__57270329_0.jpg",
-  "./image/S__57270316_0.jpg",
-  "./image//S__57270328_0.jpg",
+// const images = [
+//   "./image/S__57270309.jpg",
+//   "./image/S__57270315_0.jpg",
+//   "./image/S__57270325_0.jpg",
+//   "./image/S__57270316_0.jpg",    
+//   "./image/S__57270326_0.jpg",
+//   "./image//S__57270327_0.jpg",
+//   "./image/S__57270309.jpg",
+//   "./image//S__57270329_0.jpg",
+//   "./image/S__57270316_0.jpg",
+//   "./image//S__57270328_0.jpg",
   
+// ];
+
+const images = [
+  { src: "./images/S__57270309.jpg", title: "Boader Sweat" },
+  { src: "./images/S__57270315_0.jpg", title: "Parker Vest" },
+  { src: "./images/S__57270325_0.jpg", title: "Yellow Boader Sweat" },
+  { src: "./images/S__57270316_0.jpg", title: "Blue Parker Vest" },
+  { src: "./images/S__57270326_0.jpg", title: "Red Boader Sweat" },
+  { src: "./images/S__57270327_0.jpg", title: "Yellow Parker Vest" },
+  { src: "./image/S__57270309.jpg", title: "Boader Sweat" },
+  { src: "./images/S__57270329_0.jpg", title: "Green Parker Vest" },
+  { src: "./image/S__57270316_0.jpg", title: "Blue Parker Vest" },
+  { src: "./images/S__57270328_0.jpg", title: "Red Yellow Parker Vest" }
 ];
-
-
 const gallery = document.getElementById("gallery");
 
-images.forEach((src, i) => {
+images.forEach((img, i) => {
   const div = document.createElement("div");
   div.className = "break-inside-avoid group";
 
   div.innerHTML = `
-    <img src="${src}" class="w-full rounded-lg transition group-hover:opacity-90 cursor-zoom-in">
+    <img src="${img.src}" class="w-full rounded-lg transition group-hover:opacity-90 cursor-zoom-in">
     <div class="mt-2">
-      <p class="text-sm font-light">Artwork ${i+1}</p>
+      <p class="text-sm font-light">${img.title}</p>
       <p class="text-xs text-gray-400">digital sketch</p>
     </div>
   `;
